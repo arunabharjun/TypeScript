@@ -1,7 +1,4 @@
-interface Vehicle {
-	name: string;
-	year: Date;
-	broken: boolean;
+interface HasInfo {
 	summary(): string;
 }
 const oldCivic = {
@@ -12,7 +9,18 @@ const oldCivic = {
 		return `Name: ${this.name}`;
 	}
 };
-const printVehicle = (vehicle: Vehicle): void => {
-	console.log(vehicle.summary());
+
+const coldDrink = {
+	color: 'brown',
+	carbonated: true,
+	sugar: 40,
+	summary(): string {
+		return this.color;
+	}
 };
-printVehicle(oldCivic);
+
+const printInfo = (item: HasInfo): void => {
+	console.log(item.summary());
+};
+printInfo(oldCivic);
+printInfo(coldDrink);
