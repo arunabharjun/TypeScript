@@ -169,6 +169,10 @@ let point: { x: number; y: number } = {
 const logNumber: (i: number) => void = (i: number) => {
     console.log(i);
 };
+
+const add = (a: number, b: number): number => {
+    return a + b;
+};
 ```
 
 ## Type Inference
@@ -236,4 +240,22 @@ for (let i = 0; i < numbers.length; i++) {
         numberAboveZero = numbers[i];
     }
 }
+```
+
+### Annotations with functions
+
+---
+
+```tsx
+const add = (a: number, b: number): number => {
+    return a + b;
+};
+
+function divide(a: number, b: number): number {
+    return a / b;
+}
+
+const multiply = function(a: number, b: number): number {
+    return a * b;
+};
 ```
