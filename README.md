@@ -414,6 +414,10 @@ const tea: Drink = [
 
 Creates a new type, describing the property name & value types of an object.
 
+### Comparing interface with no-interface
+
+---
+
 ```tsx
 const oldCivic = {
     name: 'civic',
@@ -446,4 +450,29 @@ const printVehicle2 = (vehicle: Vehicle): void => {
     console.log(`Broken: ${vehicle.broken}`);
 };
 printVehicle2(oldCivic);
+```
+
+### Function inside interface
+
+---
+
+```tsx
+interface Vehicle {
+    name: string;
+    year: Date;
+    broken: boolean;
+    summary(): string;
+}
+const oldCivic = {
+    name: 'civic',
+    year: new Date(),
+    broken: true,
+    summary(): string {
+        return `Name: ${this.name}`;
+    }
+};
+const printVehicle = (vehicle: Vehicle): void => {
+    console.log(vehicle.summary());
+};
+printVehicle(oldCivic);
 ```
