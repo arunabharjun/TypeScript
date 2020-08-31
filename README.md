@@ -171,12 +171,6 @@ const logNumber: (i: number) => void = (i: number) => {
 };
 ```
 
-### When to use annotations
-
----
-
-Function that returns the any type
-
 ## Type Inference
 
 ---
@@ -194,4 +188,52 @@ let nothing = undefined;
 
 // built in objects
 let now = new Date();
+```
+
+### When to use annotations
+
+---
+
+1.  Function that returns the any type
+
+```tsx
+const json = '{"x":10, "y":20}';
+const coord: { x: number; y: number } = JSON.parse(json);
+console.log(coord); // { x: 10, y: 20 }
+```
+
+2. When we declare a variable on one line and initialize it later.
+
+```tsx
+const words = [
+    'red',
+    'green',
+    'blue'
+];
+
+let foundWord: boolean;
+
+for (let i = 0; i < words.length; i++) {
+    if (words[i] === 'green') {
+        foundWord = true;
+    }
+}
+```
+
+3. Var whose type cannot be infered correctly
+
+```tsx
+const numbers = [
+    -10,
+    -1,
+    12
+];
+
+let numberAboveZero: boolean | number = false;
+
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 0) {
+        numberAboveZero = numbers[i];
+    }
+}
 ```
