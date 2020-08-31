@@ -171,6 +171,12 @@ const logNumber: (i: number) => void = (i: number) => {
 };
 ```
 
+### When to use annotations
+
+---
+
+Function that returns the any type
+
 ## Type Inference
 
 ---
