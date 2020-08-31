@@ -272,4 +272,22 @@ const throwError = (message: string): never => {
     // so we used never as the return type
     // as it never returns anything
 };
+
+const todaysWeather = {
+    date: new Date(),
+    weather: 'sunny'
+};
+
+const logWeather = ({
+    date,
+    weather
+}: {
+    date: Date;
+    weather: string;
+}): void => {
+    console.log(date);
+    console.log(weather);
+};
+
+logWeather(todaysWeather);
 ```
