@@ -1,31 +1,18 @@
-const oldCivic = {
-	name: 'civic',
-	year: 2000,
-	broken: true
-};
-
-// without interface
-const printVehicle = (vehicle: {
-	name: string;
-	year: number;
-	broken: boolean;
-}): void => {
-	console.log(`Name: ${vehicle.name}`);
-	console.log(`Year: ${vehicle.year}`);
-	console.log(`Broken: ${vehicle.broken}`);
-};
-printVehicle(oldCivic);
-
-// using interface
 interface Vehicle {
 	name: string;
-	year: number;
+	year: Date;
 	broken: boolean;
+	summary(): string;
 }
-
-const printVehicle2 = (vehicle: Vehicle): void => {
-	console.log(`Name: ${vehicle.name}`);
-	console.log(`Year: ${vehicle.year}`);
-	console.log(`Broken: ${vehicle.broken}`);
+const oldCivic = {
+	name: 'civic',
+	year: new Date(),
+	broken: true,
+	summary(): string {
+		return `Name: ${this.name}`;
+	}
 };
-printVehicle2(oldCivic);
+const printVehicle = (vehicle: Vehicle): void => {
+	console.log(vehicle.summary());
+};
+printVehicle(oldCivic);
