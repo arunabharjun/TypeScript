@@ -118,7 +118,7 @@ There are two kind of types -
 3. **Classes**
 4. **Objects**
 
-## Type annotations
+## Type Annotations
 
 ---
 
@@ -164,6 +164,11 @@ let point: { x: number; y: number } = {
     x: 10,
     y: 20
 };
+
+// functions
+const logNumber: (i: number) => void = (i: number) => {
+    console.log(i);
+};
 ```
 
 ## Type Inference
@@ -171,3 +176,16 @@ let point: { x: number; y: number } = {
 ---
 
 Typescript tries to figure out what type of value a variable refers to.
+
+```tsx
+// example
+
+let apples = 5;
+let speed = 'fast';
+let hasName = true;
+let nothungMuch = null;
+let nothing = undefined;
+
+// built in objects
+let now = new Date();
+```
