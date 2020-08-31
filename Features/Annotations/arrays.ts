@@ -24,3 +24,13 @@ carMakers.push('hyundai');
 carMakers.map((car: string): string => {
 	return car.toUpperCase();
 });
+
+// flexible types
+const impDates: (Date | string)[] = [
+	new Date(),
+	'06-08-1996'
+];
+
+impDates.push(new Date());
+impDates.push('06-08-1997');
+// impDates.push(1234); //incompatible
