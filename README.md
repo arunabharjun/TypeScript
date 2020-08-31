@@ -14,6 +14,8 @@ npm install -g typescript ts-node
 tsc --help
 ```
 
+---
+
 # ▶️ Executing TS code
 
 ---
@@ -41,6 +43,8 @@ ts-node <file_name>.ts
 ```
 
 This doesn't create a new JS file from this TS file. Simply compiles it and executes to show the output.
+
+---
 
 # ⚠️ Catching errors in TS
 
@@ -90,6 +94,8 @@ const logTodo = (id: number, title: string, comple: boolean) => {
 };
 ```
 
+---
+
 # 🥞 Types in TypeScript
 
 ---
@@ -118,8 +124,11 @@ There are two kind of types -
 2. **Arrays**
 3. **Classes**
 4. **Objects**
+5. **Tuples**
 
-## Type Annotations
+---
+
+# 🎯 Annotations in TS
 
 ---
 
@@ -319,7 +328,7 @@ const {
 
 ---
 
-## Arrays in TS
+# 📚 Arrays in TS
 
 ---
 
@@ -360,4 +369,41 @@ const impDates: (Date | string)[] = [
 impDates.push(new Date());
 impDates.push('06-08-1997');
 // impDates.push(1234); //incompatible
+```
+
+# 🗂 Tuples in TS
+
+---
+
+Array-like structure where each element represents some property of a record, in a particular order.
+
+```tsx
+// with object
+const drink = {
+    color: 'brown',
+    carbonated: true,
+    sugar: 40
+};
+
+// with tuple
+type Drink = [string, boolean, number];
+
+const pepsi: Drink = [
+    'brown',
+    true,
+    40
+];
+// pepsi[0] = 40; //not compatible
+pepsi[0] = 'clear'; //compatible
+
+const sprite: Drink = [
+    'clear',
+    true,
+    40
+];
+const tea: Drink = [
+    'brown',
+    false,
+    10
+];
 ```
