@@ -52,9 +52,9 @@ This doesn't create a new JS file from this TS file. Simply compiles it and exec
 
 ```tsx
 interface Todo {
-	id: number;
-	title: string;
-	completed: boolean;
+    id: number;
+    title: string;
+    completed: boolean;
 }
 ```
 
@@ -62,15 +62,15 @@ interface Todo {
 
 ```tsx
 interface Todo {
-	id: number;
-	title: string;
-	completed: boolean;
+    id: number;
+    title: string;
+    completed: boolean;
 }
 
 const data = {
-	id: 1,
-	title: "This is a title",
-	completed : false
+    id: 1,
+    title: "This is a title",
+    completed : false
 }
 
 const task = data as Todo;
@@ -82,7 +82,7 @@ Example
 
 ```tsx
 const logTodo = (id: number, title: string, comple: boolean) => {
-	console.log(`
+    console.log(`
         ID : ${id}
         Title : ${title}
         Status : ${comple}
@@ -94,7 +94,7 @@ const logTodo = (id: number, title: string, comple: boolean) => {
 
 ---
 
-Easy way to refer to the different properties + functions that a value has
+Easy way to refer to the different properties + functions that a value has.
 There are two kind of types -
 1. **Primitive Types**
 2. **Object Types**
@@ -117,3 +117,28 @@ There are two kind of types -
 2. **Arrays**
 3. **Classes**
 4. **Objects**
+
+## Type annotations
+
+---
+
+Code we add to tell Typescript what type of value a variable will refer to.
+
+```tsx
+// example
+
+let apples: number = 5;
+let speed: string = 'fast';
+let hasName: boolean = true;
+let nothungMuch: null = null;
+let nothing: undefined = undefined;
+
+// built in objects
+let now: Date = new Date();
+```
+
+## Type Inference
+
+---
+
+Typescript tries to figure out what type of value a variable refers to.
