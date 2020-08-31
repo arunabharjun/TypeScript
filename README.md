@@ -46,11 +46,11 @@ This doesn't create a new JS file from this TS file. Simply compiles it and exec
 
 ---
 
-# ⚠️ Catching errors in TS
+# 🍿 Intro: TS in action
 
 ---
 
-## A. Using Interface (defines a new type)
+## A. Using Interface
 
 1. We use something called an **INTERFACE** to define what all properties is a thing going to have. Example -
 
@@ -406,4 +406,44 @@ const tea: Drink = [
     false,
     10
 ];
+```
+
+# 📱Interfaces in TS
+
+---
+
+Creates a new type, describing the property name & value types of an object.
+
+```tsx
+const oldCivic = {
+    name: 'civic',
+    year: 2000,
+    broken: true
+};
+
+// without interface
+const printVehicle = (vehicle: {
+    name: string;
+    year: number;
+    broken: boolean;
+}): void => {
+    console.log(`Name: ${vehicle.name}`);
+    console.log(`Year: ${vehicle.year}`);
+    console.log(`Broken: ${vehicle.broken}`);
+};
+printVehicle(oldCivic);
+
+// using interface
+interface Vehicle {
+    name: string;
+    year: number;
+    broken: boolean;
+}
+
+const printVehicle2 = (vehicle: Vehicle): void => {
+    console.log(`Name: ${vehicle.name}`);
+    console.log(`Year: ${vehicle.year}`);
+    console.log(`Broken: ${vehicle.broken}`);
+};
+printVehicle2(oldCivic);
 ```
