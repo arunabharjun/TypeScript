@@ -710,4 +710,4 @@ console.log(vehicle.color);
 // car.honk();
 ```
 
-**NOTE:** The modifiers (public, protected, private) work exactly same for fields, just like classes. But for fields we need to mention public modifier too just like the other two.
+> **NOTE:** The modifiers (public, protected, private) work exactly same for fields, just like classes. But for fields we need to mention public modifier too just like the other two.
