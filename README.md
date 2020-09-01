@@ -521,7 +521,7 @@ In easy terms, it can be thought of as a blueprint to create an Object with some
 ```tsx
 class Vehicle {
     drive(): void {
-        console.log('Vroooommmm !');
+        console.log('Reeevvvvv! Reeevvvv!');
     }
 
     honk(): void {
@@ -532,4 +532,100 @@ class Vehicle {
 const vehicle = new Vehicle();
 vehicle.drive();
 vehicle.honk();
+```
+
+## Inheritance
+
+---
+
+```tsx
+class Vehicle {
+    drive(): void {
+        console.log('Reeevvvvv! Reeevvvv!');
+    }
+
+    honk(): void {
+        console.log('Beep! Beep!');
+    }
+}
+
+// const vehicle = new Vehicle();
+// vehicle.drive();
+// vehicle.honk();
+
+// inheritance
+class Car extends Vehicle {
+    drive(): void {
+        console.log('Vroommmm Vroommm !');
+    }
+}
+
+const car = new Car();
+car.drive();
+car.honk();
+```
+
+### Modifiers
+
+---
+
+**PUBLIC** : This method can be called anywhere, anytime. (it is default, and need not be explicitly specified)
+
+**PRIVATE** : This method can only be called by other methods in this class.
+
+**PROTECTED** : This method can be called by other methods in *this* class, or by other methods in child class.
+
+## Private Modifier
+
+---
+
+```tsx
+class Vehicle {
+    honk(): void {
+        console.log('Beep! Beep!');
+    }
+}
+
+// inheritance
+class Car extends Vehicle {
+    private drive(): void {
+        console.log('Vroommmm Vroommm !');
+    }
+
+    startToDrive(): void {
+        this.drive();
+    }
+}
+
+const car = new Car();
+car.startToDrive();
+car.honk();
+```
+
+## Protected Modifier
+
+---
+
+```tsx
+class Vehicle {
+    protected honk(): void {
+        console.log('Beep! Beep!');
+    }
+}
+
+// inheritance
+class Car extends Vehicle {
+    private drive(): void {
+        console.log('Vroommmm Vroommm !');
+    }
+
+    startToDrive(): void {
+        this.drive();
+        this.honk();
+    }
+}
+
+const car = new Car();
+car.startToDrive();
+// car.honk();
 ```
