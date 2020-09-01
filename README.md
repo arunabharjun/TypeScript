@@ -752,3 +752,15 @@ console.log(vehicle.color);
 
 // car.honk();
 ```
+
+# 📑 Type Definition File
+
+---
+
+Tells the TS compiler all the different functions that are available inside the JS library that is being imported or referenced inside a TS file. We can find type definition file for a library in the following website.
+
+[DefinitelyTyped](http://definitelytyped.org)
+
+Alternatively, we can do a search for Type Definition File in the NPM modules website using the following format 
+
+> **@types/<library_name>**
