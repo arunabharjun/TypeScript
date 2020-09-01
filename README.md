@@ -509,3 +509,27 @@ const printInfo = (item: HasInfo): void => {
 printInfo(oldCivic);
 printInfo(coldDrink);
 ```
+
+---
+
+# 🗳 Classes in TS
+
+---
+
+In easy terms, it can be thought of as a blueprint to create an Object with some fields (values) & methods (functions) to represent a 'thing'
+
+```tsx
+class Vehicle {
+    drive(): void {
+        console.log('Vroooommmm !');
+    }
+
+    honk(): void {
+        console.log('Beep! Beep!');
+    }
+}
+
+const vehicle = new Vehicle();
+vehicle.drive();
+vehicle.honk();
+```
