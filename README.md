@@ -629,3 +629,85 @@ const car = new Car();
 car.startToDrive();
 // car.honk();
 ```
+
+## Fields
+
+---
+
+### [Long version] Initializing using constructor
+
+---
+
+```tsx
+class Vehicle {
+    // FIELDS
+    color: string;
+
+    // constructor to initialize the field in first run
+    constructor(color: string) {
+        this.color = color;
+    }
+
+    protected honk(): void {
+        console.log('Beep! Beep!');
+    }
+}
+
+// inheritance
+class Car extends Vehicle {
+    private drive(): void {
+        console.log('Vroommmm Vroommm !');
+    }
+
+    startToDrive(): void {
+        this.drive();
+        this.honk();
+    }
+}
+
+const car = new Car('Blue');
+car.startToDrive();
+
+const vehicle = new Vehicle('White');
+console.log(vehicle.color);
+
+// car.honk();
+```
+
+### [Alternative/Shortcut version] Initializing using constructor
+
+---
+
+```tsx
+class Vehicle {
+    // FIELDS
+    // constructor to initialize the field in first run
+    constructor(public color: string) {}
+
+    protected honk(): void {
+        console.log('Beep! Beep!');
+    }
+}
+
+// inheritance
+class Car extends Vehicle {
+    private drive(): void {
+        console.log('Vroommmm Vroommm !');
+    }
+
+    startToDrive(): void {
+        this.drive();
+        this.honk();
+    }
+}
+
+const car = new Car('Blue');
+car.startToDrive();
+
+const vehicle = new Vehicle('White');
+console.log(vehicle.color);
+
+// car.honk();
+```
+
+**NOTE:** The modifiers (public, protected, private) work exactly same for fields, just like classes. But for fields we need to mention public modifier too just like the other two.

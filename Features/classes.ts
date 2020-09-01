@@ -1,4 +1,8 @@
 class Vehicle {
+	// FIELDS
+	// constructor to initialize the field in first run
+	constructor(public color: string) {}
+
 	protected honk(): void {
 		console.log('Beep! Beep!');
 	}
@@ -16,6 +20,10 @@ class Car extends Vehicle {
 	}
 }
 
-const car = new Car();
+const car = new Car('Blue');
 car.startToDrive();
+
+const vehicle = new Vehicle('White');
+console.log(vehicle.color);
+
 // car.honk();
