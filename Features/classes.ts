@@ -8,8 +8,12 @@ class Vehicle {
 	}
 }
 
-// inheritance
+// inheritance with field
 class Car extends Vehicle {
+	constructor(public wheels: number, color: string) {
+		super(color);
+	}
+
 	private drive(): void {
 		console.log('Vroommmm Vroommm !');
 	}
@@ -20,8 +24,9 @@ class Car extends Vehicle {
 	}
 }
 
-const car = new Car('Blue');
+const car = new Car(4, 'Blue');
 car.startToDrive();
+console.log(car.wheels);
 
 const vehicle = new Vehicle('White');
 console.log(vehicle.color);
